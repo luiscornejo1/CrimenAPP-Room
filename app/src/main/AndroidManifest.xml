@@ -11,7 +11,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RegistroCriminal4"
-        android:name=".ui.theme.MainApplication"
         tools:targetApi="31">
         <activity
             android:name=".ui.theme.MainActivity"

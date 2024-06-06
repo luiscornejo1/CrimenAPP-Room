@@ -39,6 +39,10 @@ android {
     }
     buildFeatures {
         compose = true
+
+        viewBinding {
+            enable = true
+        }
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
@@ -59,7 +63,16 @@ dependencies {
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.androidx.material3)
+    implementation(libs.androidx.material3.android)
+    implementation(libs.androidx.compose.material)
+
+    dependencies {
+
+        val nav_version = "2.7.7"
+
+        implementation("androidx.navigation:navigation-compose:$nav_version")
+    }
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -75,5 +88,17 @@ dependencies {
 
         // To use Kotlin annotation processing tool (kapt)
         kapt("androidx.room:room-compiler:$room_version")
+    }
+
+    dependencies {
+        val nav_version = "2.7.7"
+
+        // Java language implementation
+        implementation("androidx.navigation:navigation-fragment:$nav_version")
+        implementation("androidx.navigation:navigation-ui:$nav_version")
+
+        // Kotlin
+        implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
+        implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
     }
 }
